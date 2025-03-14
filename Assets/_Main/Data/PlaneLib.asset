@@ -21,19 +21,19 @@ MonoBehaviour:
       m_GuidLow: 5137882709352683395
       m_GuidHigh: 8099271541785866681
     m_SerializedTextureGuid:
-      m_GuidLow: 14764103707425581141
-      m_GuidHigh: 11542347433688077097
+      m_GuidLow: 3275364974042053494
+      m_GuidHigh: 4757989671887342490
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Plane
-    m_Texture: {fileID: 2800000, guid: 2c212855a219cce429931e43d6a72ea0, type: 3}
+    m_Texture: {fileID: 2800000, guid: 1b887b766f172d749a8bd2cd65c60742, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 5199977386183325463
       m_GuidHigh: 1640396606559408301
     m_SerializedTextureGuid:
-      m_GuidLow: 4333644556387415372
-      m_GuidHigh: 62693391363451433
+      m_GuidLow: 1235266372851549273
+      m_GuidHigh: 472803239363275929
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Earth
-    m_Texture: {fileID: 2800000, guid: 6e46f54c32c33c2429aafba94ebbde00, type: 3}
+    m_Texture: {fileID: 2800000, guid: accd44598c38112499ece68a0abc8f06, type: 3}
