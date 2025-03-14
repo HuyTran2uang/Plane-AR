@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370698370034426841}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.33903712, z: 0, w: 0.940773}
+  m_LocalRotation: {x: 0, y: 0.9737922, z: 0, w: -0.2274398}
   m_LocalPosition: {x: 0, y: 0.0775, z: 0}
   m_LocalScale: {x: 0.0001, y: 0.0001, z: 0.0001}
   m_ConstrainProportionsScale: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 2
-  isShowGizmos: 1
+  isShowGizmos: 0
 --- !u!1 &1191111891807023515
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5553304732218188448
 Transform:
   m_ObjectHideFlags: 0
@@ -5078,7 +5078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5786644181177611391}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5446775, y: -0.1058023, z: -0.06951642, w: -0.8290355}
+  m_LocalRotation: {x: -0.019962743, y: -0.83520055, z: -0.54874283, w: 0.03037787}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5100,7 +5100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  isShowGizmos: 1
+  _gos: []
+  _prefab: {fileID: 2340272475199203352, guid: 2f6f04089262b984ea4a4694f0ef333c, type: 3}
+  veTinh: {fileID: 1954963127399932091}
+  parent: {fileID: 5591420549840380671}
+  isShowGizmos: 0
 --- !u!1 &8408138911481562764
 GameObject:
   m_ObjectHideFlags: 0

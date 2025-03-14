@@ -8,7 +8,7 @@ public class ARTrackingImageDetect : MonoBehaviour
 {
     [SerializeField] private ARTrackedImageManager _imageManager;
     private Dictionary<string, GameObject> _models = new Dictionary<string, GameObject>();
-
+    private string _name;
     void OnEnable() => _imageManager.trackablesChanged.AddListener(OnChanged);
 
     void OnDisable() => _imageManager.trackablesChanged.RemoveListener(OnChanged);
@@ -35,12 +35,15 @@ public class ARTrackingImageDetect : MonoBehaviour
         if (updated == null || updated.Count == 0) return;
         foreach (var updatedImage in updated)
         {
+            //if(updatedImage.trackingState != TrackingState.Tracking)
+            //{
+            //    _name = null;
+            //}
             Debug.Log($"{updatedImage.referenceImage.name} - State: {updatedImage.trackingState}");
 
             if (_models.TryGetValue(updatedImage.referenceImage.name, out var model))
             {
                 bool isTracking = updatedImage.trackingState == TrackingState.Tracking;
-                model.SetActive(isTracking);
 
                 if (isTracking)
                 {
@@ -57,16 +60,19 @@ public class ARTrackingImageDetect : MonoBehaviour
                         updatedImage.transform.rotation,
                         0.1f
                     );
-
-                    if (model.activeSelf)
+                    if (!model.activeSelf)
                     {
-                        smoothPosition = updatedImage.transform.position;
-                        smoothRotation = updatedImage.transform.rotation;
+                        //_name = updatedImage.referenceImage.name;
+                        model.transform.position = updatedImage.transform.position;
+                        model.transform.rotation = updatedImage.transform.rotation;
                     }
-
-                    model.transform.position = smoothPosition;
-                    model.transform.rotation = smoothRotation;
+                    else
+                    {
+                        model.transform.position = smoothPosition;
+                        model.transform.rotation = smoothRotation;
+                    }
                 }
+                model.SetActive(isTracking);
             }
         }
     }
