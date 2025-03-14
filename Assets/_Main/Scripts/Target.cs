@@ -22,7 +22,7 @@ public class Target : MonoBehaviour
             }
             else if (isPinching && (touch1.phase == TouchPhase.Moved || touch2.phase == TouchPhase.Moved))
             {
-                // Zoom in/out
+                // Zoom In/Out
                 float prevDistance = Vector2.Distance(prevTouch1, prevTouch2);
                 float currentDistance = Vector2.Distance(touch1.position, touch2.position);
                 float zoomFactor = (currentDistance - prevDistance) * 0.01f; // Điều chỉnh tốc độ zoom
@@ -42,8 +42,11 @@ public class Target : MonoBehaviour
             }
             else if (isRotating && touch.phase == TouchPhase.Moved)
             {
-                float rotationAmount = touch.deltaPosition.x * rotationSpeed;
-                transform.Rotate(Vector3.up, -rotationAmount, Space.World); // Xoay theo trục Y
+                float rotationX = touch.deltaPosition.y * rotationSpeed; // Xoay theo trục X khi vuốt dọc
+                float rotationY = -touch.deltaPosition.x * rotationSpeed; // Xoay theo trục Y khi vuốt ngang
+
+                transform.Rotate(Vector3.right, rotationX, Space.World); // Xoay theo trục X
+                transform.Rotate(Vector3.up, rotationY, Space.World);    // Xoay theo trục Y
             }
         }
         else
