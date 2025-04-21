@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   h: 10
-  F: 0
-  F_nang: 0
-  F_can: 123123
-  F_day: 0
-  P: 0
-  V_duoi: 0
-  V_tren: 0
+  F: 36000
+  F_nang: 686700
+  F_can: 36000
+  F_day: 36000
+  P: 686700
+  V_duoi: 833
+  V_tren: 1023
