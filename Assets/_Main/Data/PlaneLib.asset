@@ -26,7 +26,7 @@ MonoBehaviour:
     m_Size: {x: 0.716, y: 0.4}
     m_SpecifySize: 1
     m_Name: Plane
-    m_Texture: {fileID: 2800000, guid: 1b887b766f172d749a8bd2cd65c60742, type: 3}
+    m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5199977386183325463
       m_GuidHigh: 1640396606559408301
@@ -36,4 +36,4 @@ MonoBehaviour:
     m_Size: {x: 0.812, y: 0.71999997}
     m_SpecifySize: 1
     m_Name: Earth
-    m_Texture: {fileID: 2800000, guid: accd44598c38112499ece68a0abc8f06, type: 3}
+    m_Texture: {fileID: 0}

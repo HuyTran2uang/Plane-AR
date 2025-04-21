@@ -1,31 +1,48 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Plane : MonoBehaviour
 {
-    private static float GRAVITY = 9.81f;
-    private static float m = 70000;//kg - mass of the plane
-    private static float k = 0.06f;//luc can
-    private static float v0 = 194.4f;//m/s //km/h; = 194.4 m/s - initial velocity of the plane
-    private static float ro = 1.225f;//kg/m3 - density of air
-    private static float S = 122.4f * 2;//m2 - area of the plane
-    private static float e = (float)System.Math.E;
-    private static float t = 1;//s - time step
+    public List<StatSO> listStats = new List<StatSO>();
+    public StatSO stat;
+    //view
+    public TMP_Dropdown dropdown;
+    //info
+    public TMP_Text f_dayTXT;
+    public TMP_Text f_canTXT;
+    public TMP_Text f_nangTXT;
+    public TMP_Text pTXT;
+    public TMP_Text v_duoiTXT;
+    public TMP_Text v_trenTXT;
 
-    public float F_day;//input
-
-    public float P;//GRAVITY*m
-    public float V_duoi;
-    public float V_tren;
-    public float F_nang;
-    public float F_can;
-
-    private void Update()
+    private void Start()
     {
-        P = GRAVITY * m;
-        V_duoi = F_day / k + (v0 - F_day / k) * Mathf.Pow(e, -k * t / m);
-        V_duoi = V_duoi * 3.6f; // Convert m/s to km/h
-        V_tren = V_duoi * 1.1f;
-        F_nang = (ro * (V_tren * V_tren - V_duoi * V_duoi) * S / (3.6f * 3.6f)) / 2;
-        F_can = k * V_duoi * V_duoi;
+        listStats = Resources.LoadAll<StatSO>("Stats").ToList();
+        stat = listStats[0];
+
+        dropdown.AddOptions(listStats.Select(x => $"{x.h}Km-{x.F}KN").ToList());
+        dropdown.value = 0;
+        dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
+
+        ShowStats(stat);
+    }
+
+    private void OnDropdownValueChanged(int index)
+    {
+        stat = listStats[index];
+        ShowStats(stat);
+    }
+
+    public void ShowStats(StatSO stats)
+    {
+        f_dayTXT.SetText($"F đẩy: {stats.F_day}");
+        f_canTXT.SetText($"F cản: {stats.F_can}");
+        f_nangTXT.SetText($"F nâng: {stats.F_nang}");
+        pTXT.SetText($"P: {stats.P}");
+        v_duoiTXT.SetText($"V dưới: {stats.V_duoi}");
+        v_trenTXT.SetText($"V trên: {stats.V_tren}");
     }
 }
